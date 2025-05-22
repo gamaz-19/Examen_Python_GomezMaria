@@ -11,10 +11,10 @@ def guardarJSON(dic):
         json.dump(dic,outFile)
 
 def cargarLogs():
-    dicFinal=[]
+    listaVentas=[]
     with open("./data/ventas/logs.json",'r') as openFile:
-        dicFinal=json.load(openFile)
-    return dicFinal
+        listaVentas=json.load(openFile)
+    return listaVentas
 
 def logsJSON(dic):
     listaVentas = []

@@ -4,12 +4,11 @@
 
 import json
 from functions.funciones import*
+from functions.funciones2 import*
 
 listaVentas = abrirJSON()
 
-
-
-
+listaCompras = abrirJSON()
 
 
 
@@ -67,6 +66,34 @@ while booleano:
             listaVentas.append(diccionarioVentas)
             guardarJSON(listaVentas)
 
+        elif (menu1 == 2):
+            print("Registrar compras")
+            print("Fecha compra")
+            dia = (input("Dia: "))
+            mes = (input("Mes: "))
+            year = (input("Year: "))
+            fechadt = (dia,"/",mes,"/",year) #
+            print ("Informacion proveedor")
+            nombreProveedor1 = (input("Nombre: "))
+            contacto = (input("Contacto: "))
+            inforProveedor = ("Nombre: ",nombreProveedor1,"\nDireccion: ",contacto) #
+            print ("Informacion producto comprado")
+            producto1 = (input("Producto: ")) 
+            cantidad1 = (input("Cantidad: ")) 
+            precio1 = (input("Precio: ")) 
+            productoVendido = ("Producto: ",producto1, "Cantidad: ",cantidad1, "Precio: ",precio1) #
+
+            diccionarioCompras = {
+                "fechaVenta" : fechadt,
+                "inforProveedor" : inforProveedor,
+
+                "productVendido" : productoVendido
+
+            }
+
+            listaCompras.append(diccionarioCompras)
+            guardarJSON(listaCompras)
+
 
 
 
@@ -79,7 +106,7 @@ while booleano:
         3.Clientes
         
         ''')
-        menu2 == (int (input ( " Ingrese la opcion que quiere seleccionar")))
+        menu2 = (int (input ( " Ingrese la opcion que quiere seleccionar")))
         if ( menu2 == 1):
             print ('''
         Proveedores
@@ -89,9 +116,17 @@ while booleano:
         3.Editar
         4.Eliminar
         
+        Ingrese opcion para proveedores:
         
         ''')
-        elif ( menu1 == 1):
+            proveedores= (int(input("opcion")))
+            if (proveedores == 1):
+                print("nuevo proveedor")
+                nombreP = (input("Nombre proveedor: "))
+                contactoP = (input("Contacto proveedor: "))
+                direccionP = (input("Direccion proveedor: "))
+
+        elif ( menu2 == 2):
             print (" ")
 
     elif ( menuprincipal == 3):
