@@ -1,27 +1,27 @@
 import json
 
 def abrirJSON():
-    dicFinal=[]
+    listaVentas=[]
     with open("./data/ventas.json",'r') as openFile:
-        dicFinal=json.load(openFile)
-    return dicFinal
+        listaVentas=json.load(openFile)
+    return listaVentas
 
 def guardarJSON(dic):
-    with open("./data/datos.json",'w') as outFile:
+    with open("./data/ventas.json",'w') as outFile:
         json.dump(dic,outFile)
 
 def cargarLogs():
     dicFinal=[]
-    with open("./data/logs.json",'r') as openFile:
+    with open("./data/ventas/logs.json",'r') as openFile:
         dicFinal=json.load(openFile)
     return dicFinal
 
 def logsJSON(dic):
-    dicTemporal = []
+    listaVentas = []
     #print("Diccionario Importado LOGS")
     
-    dicTemporal=cargarLogs()
-    #print(dicTemporal)
-    dicTemporal.append(dic)
-    with open("./data/logs.json",'w') as outFile:
-        json.dump(dicTemporal,outFile)
+    listaVentas=cargarLogs()
+    #print(diccionarioVentas)
+    listaVentas.append(dic)
+    with open("./data/ventas/logs.json",'w') as outFile:
+        json.dump(listaVentas,outFile)
