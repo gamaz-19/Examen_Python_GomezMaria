@@ -1,27 +1,27 @@
 import json
 
-def abrieJSON():
+def abrirJSON2():
     listaCompras=[]
     with open("./data/compras.json",'r') as openFile:
         listaCompras=json.load(openFile)
     return listaCompras
 
-def guardaeJSON(dic):
+def guardarJSON2(dic):
     with open("./data/compras.json",'w') as outFile:
         json.dump(dic,outFile)
 
-def cargaeLogs():
+def cargarLogs2():
     listaCompras=[]
-    with open("./data/compras/logs.json",'r') as openFile:
+    with open("./data/compras.json",'r') as openFile:
         listaCompras=json.load(openFile)
     return listaCompras
 
-def logseJSON(dic):
+def logsJSON2(dic):
     listaCompras = []
     #print("Diccionario Importado LOGS")
     
     listaCompras=cargarLogs()
-    #print(diccionarioVentas)
+    #print(diccionarioCompras)
     listaCompras.append(dic)
-    with open("./data/compras/logs.json",'w') as outFile:
+    with open("./data/compras.json",'w') as outFile:
         json.dump(listaCompras,outFile)

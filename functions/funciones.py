@@ -12,7 +12,7 @@ def guardarJSON(dic):
 
 def cargarLogs():
     listaVentas=[]
-    with open("./data/ventas/logs.json",'r') as openFile:
+    with open("./data/ventas.json",'r') as openFile:
         listaVentas=json.load(openFile)
     return listaVentas
 
@@ -23,5 +23,5 @@ def logsJSON(dic):
     listaVentas=cargarLogs()
     #print(diccionarioVentas)
     listaVentas.append(dic)
-    with open("./data/ventas/logs.json",'w') as outFile:
+    with open("./data/ventas.json",'w') as outFile:
         json.dump(listaVentas,outFile)

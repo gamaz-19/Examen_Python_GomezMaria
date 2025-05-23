@@ -8,7 +8,9 @@ from functions.funciones2 import*
 
 listaVentas = abrirJSON()
 
-listaCompras = abrirJSON()
+listaCompras = abrirJSON2()
+
+from datetime import datetime
 
 
 
@@ -37,10 +39,10 @@ while booleano:
         if ( menu1 == 1):
             print("Registrar ventas")
             print("Fecha venta")
-            dia = (input("Dia: "))
-            mes = (input("Mes: "))
-            year = (input("Year: "))
-            fechadt = (dia,"/",mes,"/",year) #
+            dia = (int(input("Dia: ")))
+            mes = (int(input("Mes: ")))
+            year = (int(input("Year: ")))
+            fechadt = (f"{dia:02d}/{mes:02d}/{year}")
             print ("Informacion cliente")
             nombreCliente1 = (input("Nombre: "))
             direccion = (input("Direccion: "))
@@ -69,10 +71,10 @@ while booleano:
         elif (menu1 == 2):
             print("Registrar compras")
             print("Fecha compra")
-            dia = (input("Dia: "))
-            mes = (input("Mes: "))
-            year = (input("Year: "))
-            fechadt = (dia,"/",mes,"/",year) #
+            dia = (int(input("Dia: ")))
+            mes = (int(input("Mes: ")))
+            year = (int(input("Year: ")))
+            fechadt = (f"{dia:02d}/{mes:02d}/{year}")
             print ("Informacion proveedor")
             nombreProveedor1 = (input("Nombre: "))
             contacto = (input("Contacto: "))
@@ -92,7 +94,7 @@ while booleano:
             }
 
             listaCompras.append(diccionarioCompras)
-            guardarJSON(listaCompras)
+            guardarJSON2(listaCompras)
 
 
 
